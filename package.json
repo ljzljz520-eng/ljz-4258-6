@@ -1,0 +1,31 @@
+{
+  "name": "ferment-record-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:server": "tsx watch server/server.ts",
+    "dev:web": "vite --host 0.0.0.0 --config web/vite.config.ts",
+    "build": "npm run typecheck && vite build --config web/vite.config.ts",
+    "start": "tsx server/server.ts",
+    "simulate": "tsx server/simulator.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:integration": "RUN_PG_INTEGRATION=1 node --import tsx --test tests/*.test.ts",
+    "migrate": "tsx scripts/migrate.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "fastify": "^5.0.8",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.10",
+    "@types/pg": "^8.11.10",
+    "solid-js": "^1.9.2",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "vite": "^7.3.6",
+    "vite-plugin-solid": "^2.11.14"
+  }
+}

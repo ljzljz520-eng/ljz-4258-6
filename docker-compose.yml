@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ferment_records
+      POSTGRES_USER: ferment
+      POSTGRES_PASSWORD: ferment
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ferment -d ferment_records"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes: { pgdata: {} }
