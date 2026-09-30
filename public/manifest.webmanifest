@@ -1,0 +1,10 @@
+{
+  "name": "发酵乳记录平台",
+  "short_name": "发酵乳记录",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f766e",
+  "description": "离线采集发酵乳温度/pH，在线授权接种与状态推进",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
